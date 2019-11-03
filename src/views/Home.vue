@@ -1,18 +1,31 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <planner-box/>
+    <History/>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<script lang="ts">
+import Vue from 'vue';
+import History from '@/components/History.vue';
+import PlannerBox from '@/components/PlannerBox.vue';
 
-export default {
-  name: 'home',
+export default Vue.extend({
+  name: 'app',
   components: {
-    HelloWorld
-  }
-}
+    History,
+    PlannerBox,
+  },
+});
 </script>
+
+<style lang="scss">
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>

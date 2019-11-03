@@ -1,29 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+    </div>
+    <router-view/>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
-
-export default Vue.extend({
-  name: 'app',
-  components: {
-    HelloWorld,
-  },
-});
-</script>
-
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+body {
+  background: #74b9ff;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+} 
 </style>
