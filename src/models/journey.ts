@@ -6,6 +6,5 @@ export default interface Journey {
     hArrive: Date;
     c02: number;
     duration: number;
-    step: Array<Step>;
-  }
-  
+    step: Step[];
+}

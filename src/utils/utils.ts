@@ -8,12 +8,11 @@ export function getRandomId(): number {
 }
 
 export function parseDate(dateISO: string): string {
-    var arrayDateISO = dateISO.split("")
-    arrayDateISO.splice( 4, 0, "-");
-    arrayDateISO.splice( 7, 0, "-");
-    arrayDateISO.splice( 13, 0, ":");
-    arrayDateISO.splice( 16, 0, ":");
-    dateISO = arrayDateISO.join("")
+    const arrayDateISO = dateISO.split('');
+    arrayDateISO.splice( 4, 0, '-');
+    arrayDateISO.splice( 7, 0, '-');
+    arrayDateISO.splice( 13, 0, ':');
+    arrayDateISO.splice( 16, 0, ':');
+    dateISO = arrayDateISO.join('');
     return dateISO;
 }
-  

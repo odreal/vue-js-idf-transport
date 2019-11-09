@@ -7,5 +7,4 @@ export default interface Step {
     direction: string;
     hStart: Date;
     hArrive: Date;
-  }
-  
+}

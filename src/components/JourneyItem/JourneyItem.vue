@@ -10,7 +10,7 @@
           <span>Itinéraire n°{{journey.id}}</span>
           <span>Nombre de correspondance: {{journey.step.length}}</span>
           <span>Durée: {{Math.floor(journey.duration / 3600) }}h{{Math.floor((journey.duration - Math.floor(journey.duration / 3600) * 3600) / 60)}}min</span>
-          <span>Emission: {{journey.c02}} gEC</span>
+          <span>Emission CO2: {{journey.c02}} gEC</span>
         </div>
       </div>
       <div class="journey__steps">
@@ -27,23 +27,21 @@ import Journey from '@/models/journey';
 
 export default Vue.extend({
   components: {
-        JourneyStep,
-    },
+    JourneyStep,
+  },
   props: {
     journey: Object as () => Journey,
   },
   watch: {
-    
   },
   methods: {
-    
   },
 });
 </script>
 
 <style lang="scss">
 li {
-  background: #ffffff;
+  background: #FAF9F9;
 }
 
 .journey__details--time {
@@ -51,8 +49,7 @@ li {
   flex-direction: column;
   align-items: center;
   align-self: center;
-  width: 30%;
-  border-right: 1px solid #ced4da;
+  width: 20%;
   font-size: 0.8rem;
 }
 
@@ -60,6 +57,9 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding: 5px 0 5px 0;
+  border-left: 1px solid #5D5D81;
+  
   
   & span {
     text-align: left;
@@ -72,9 +72,9 @@ li {
 .journey__item {
   display: flex;
   flex-direction: row;
-  background: rgba(255,255,255,1);
-  border-bottom: 1px solid #ced4da;
-  border-top: 1px solid #ced4da;
+  background: #B0D7FF;
+  border-bottom: 1px solid #5D5D81;
+  border-top: 1px solid #5D5D81;
   margin-top: 10px;
 }
 
@@ -96,6 +96,7 @@ li {
   & h3 {
     text-align: left;
     font-size: 0.9rem;
+    margin-left: 5px;
   }
 }
 </style>

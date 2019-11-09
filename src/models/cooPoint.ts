@@ -3,6 +3,5 @@ export default interface CooPoint {
     coord: {
         lat: number;
         lon: number;
-    }
-  }
-  
+    };
+}

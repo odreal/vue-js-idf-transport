@@ -23,10 +23,10 @@
 </template>
 
 <script lang="ts">
-    import Vue from 'vue';
-    import JourneyList from '@/components/JourneyList/JourneyList.vue';
-    
-    export default Vue.extend({
+import Vue from 'vue';
+import JourneyList from '@/components/JourneyList/JourneyList.vue';
+
+export default Vue.extend({
   data(): { firstPoint: string, secondPoint: string, arrivalDate: string } {
     return {
       firstPoint: '',
@@ -35,23 +35,27 @@
     };
   },
   components: {
-        JourneyList,
-    },
+      JourneyList,
+  },
   methods: {
     getPlaces(): void {
-        if(this.firstPoint.length&&this.secondPoint.length&&this.arrivalDate.length){
-          this.$store.dispatch('journey/reset', {});
-          this.$store.dispatch('journey/search', { firstPoint: this.firstPoint, secondPoint: this.secondPoint, arrivalDate: this.arrivalDate });
-        }
-        
-      
+      if (this.firstPoint.length && this.secondPoint.length && this.arrivalDate.length) {
+        this.$store.dispatch('journey/reset', {});
+        this.$store.dispatch('journey/search', {
+          firstPoint: this.firstPoint,
+          secondPoint: this.secondPoint,
+          arrivalDate: this.arrivalDate,
+        });
+      }
     },
   },
 });
 </script>
 
 <style lang="scss" scoped>
-
+    section > p {
+      padding: 0 10% 0 10%;
+    }
     form {
         display: flex;
         flex-direction: column;
@@ -83,7 +87,7 @@
       
       & label {
         border-radius: 3px 0px 0px 3px;
-        background: #e9ecef;
+        background: #B0D7FF;
         text-align: center;
         vertical-align: middle;
         align-self: center;
@@ -101,5 +105,7 @@
       align-self: center;
       border-radius: 3px;
       margin-bottom: 40px;
+      color: #FFFFFF;
+      background: #5D5D81;
     }
 </style>
