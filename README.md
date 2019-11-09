@@ -1,11 +1,12 @@
 # projet-vue
+## Instruction d'installation
 
-## Project setup
+## 1 - Installer les dépendances du projet :
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 2 - Tester le projet en mode développement :
 ```
 npm run serve
 ```
