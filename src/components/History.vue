@@ -1,7 +1,4 @@
 <template>
-    <li>
-        test
-    </li>
 </template>
 
 <script lang="ts">

@@ -11,7 +11,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 body {
-  background: #74b9ff;
+  background: #fafafa;
   color: white;
   font-family: 'Open Sans', sans-serif;
   margin: 0;

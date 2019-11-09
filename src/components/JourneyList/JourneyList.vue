@@ -1,7 +1,7 @@
 <template>
     <ul>
+      <p>Nous avons trouvé {{journeys.length}} itinéraires</p>
       <journeyItem v-for="journey in journeys" :key="journey.id" :journey="journey"></journeyItem>
-      <button @click="testFn()">cliick</button>
     </ul>
     
 </template>
