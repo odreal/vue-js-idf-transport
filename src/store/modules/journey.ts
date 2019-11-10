@@ -1,4 +1,5 @@
 import Journey from '@/models/journey';
+import FormatedDate from '@/models/formatedDate'
 import CooPoint from '@/models/cooPoint';
 import Step from '@/models/step';
 import { getRandomId, parseDate } from '@/utils/utils';
@@ -13,9 +14,10 @@ const journey: Module<{ journeys: Journey[] }, any> = {
   getters: {
   },
   mutations: {
-    add(state, payload: { id: number, hStart: Date, hArrive: Date, c02: number, duration: number, step: Step[]  }) {
+    add(state, payload: { order: number, hStart: FormatedDate, hArrive: FormatedDate, c02: number, duration: number, step: Step[]  }) {
       state.journeys.push({
-        id: payload.id,
+        id: getRandomId(),
+        order: payload.order,
         hStart: payload.hStart,
         hArrive: payload.hArrive,
         c02: payload.c02,
@@ -99,8 +101,8 @@ const journey: Module<{ journeys: Journey[] }, any> = {
                   mode: section.display_informations.commercial_mode,
                   code: section.display_informations.code,
                   direction: section.display_informations.direction,
-                  hStart: new Date(parseDate(section.base_departure_date_time)),
-                  hArrive: new Date(parseDate(section.base_arrival_date_time)),
+                  hStart: parseDate(element.departure_date_time),
+                  hArrive: parseDate(element.arrival_date_time),
                 };
                 tmpArray.push(tmpObject);
                 indexStep++;
@@ -108,9 +110,9 @@ const journey: Module<{ journeys: Journey[] }, any> = {
           });
           if (tmpArray.length > 0) {
             context.commit('add', {
-              id: indexJourney,
-              hStart: new Date(parseDate(element.departure_date_time)),
-              hArrive: new Date(parseDate(element.arrival_date_time)),
+              order: indexJourney,
+              hStart: parseDate(element.departure_date_time),
+              hArrive: parseDate(element.arrival_date_time),
               duration: element.duration,
               c02: element.co2_emission.value,
               step: tmpArray },

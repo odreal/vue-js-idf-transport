@@ -1,3 +1,4 @@
+import FormatedDate from '@/models/formatedDate';
 export default interface Step {
     id: number;
     from: string;
@@ -5,6 +6,6 @@ export default interface Step {
     mode: string;
     code: string;
     direction: string;
-    hStart: Date;
-    hArrive: Date;
+    hStart: FormatedDate;
+    hArrive: FormatedDate;
 }

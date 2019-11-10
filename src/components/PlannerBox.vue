@@ -37,6 +37,9 @@ export default Vue.extend({
   components: {
       JourneyList,
   },
+  created: function() {
+    this.$store.dispatch('journey/reset', {});
+  },
   methods: {
     getPlaces(): void {
       if (this.firstPoint.length && this.secondPoint.length && this.arrivalDate.length) {

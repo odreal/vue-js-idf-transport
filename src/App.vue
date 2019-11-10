@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link class="routing__planner" to="/"><i class="material-icons">commute</i><span>Plannification</span></router-link>
-      <router-link class="routing__history" to="/history"><i class="material-icons">library_books</i><span>Mes itinéraires</span></router-link>
+      <router-link class="routing__history" to="/planned"><i class="material-icons">library_books</i><span>Mes itinéraires</span></router-link>
     </div>
     <router-view/>
   </div>

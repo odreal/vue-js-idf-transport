@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <planner-box/>
-    <History/>
   </div>
 </template>
 
