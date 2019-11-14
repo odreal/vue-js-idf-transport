@@ -1,5 +1,5 @@
 import Journey from '@/models/journey';
-import FormatedDate from '@/models/formatedDate'
+import FormatedDate from '@/models/formatedDate';
 import CooPoint from '@/models/cooPoint';
 import Step from '@/models/step';
 import { getRandomId, parseDate } from '@/utils/utils';
@@ -14,7 +14,14 @@ const journey: Module<{ journeys: Journey[] }, any> = {
   getters: {
   },
   mutations: {
-    add(state, payload: { order: number, hStart: FormatedDate, hArrive: FormatedDate, c02: number, duration: number, step: Step[]  }) {
+    add(state, payload: {
+      order: number,
+      hStart: FormatedDate,
+      hArrive: FormatedDate,
+      c02: number,
+      duration: number,
+      step: Step[],
+    }) {
       state.journeys.push({
         id: getRandomId(),
         order: payload.order,

@@ -18,8 +18,19 @@ export function parseDate(dateISO: string): object {
     dateISO = arrayDateISO.join('');
     const dateValue = new Date(dateISO);
     const stringifiedDate = dateValue.getDate() + '/' + dateValue.getMonth() + '/' + dateValue.getFullYear();
-    const hours = dateValue.getHours().toString().length > 1 ? '' + dateValue.getHours() : '0' + dateValue.getHours();
-    const minutes = dateValue.getMinutes().toString().length > 1 ? '' + dateValue.getMinutes() : '0' + dateValue.getMinutes();
+    let hours = '';
+    if (dateValue.getHours().toString().length > 1) {
+        hours = '' + dateValue.getHours();
+    } else {
+        hours = '0' + dateValue.getHours();
+    }
+
+    let minutes = '';
+    if (dateValue.getMinutes().toString().length > 1) {
+        minutes = '' + dateValue.getMinutes();
+    } else {
+        minutes = '0' + dateValue.getMinutes();
+    }
     const tmpObject = {dateValue: dateValue, stringifiedDate: stringifiedDate, hours: hours, minutes: minutes};
     return tmpObject;
 }

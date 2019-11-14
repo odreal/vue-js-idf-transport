@@ -14,7 +14,13 @@ const history: Module<{ plannedJourneys: Journey[] }, any> = {
   getters: {
   },
   mutations: {
-    add(state, payload: { id: number, hStart: FormatedDate, hArrive: FormatedDate, c02: number, duration: number, step: Step[] }) {
+    add(state, payload: {
+      id: number,
+      hStart: FormatedDate,
+      hArrive: FormatedDate,
+      c02: number,
+      duration: number,
+      step: Step[] }) {
         state.plannedJourneys.push({
           id: payload.id,
           order: 0,
@@ -25,12 +31,18 @@ const history: Module<{ plannedJourneys: Journey[] }, any> = {
           step: payload.step,
         });
     },
-    modifyPlannedJourneys(state, payload: {plannedJourneys: Journey[]}){
+    modifyPlannedJourneys(state, payload: {plannedJourneys: Journey[]}) {
       state.plannedJourneys = payload.plannedJourneys;
-    }
+    },
   },
   actions: {
-    add(context, payload: {id: number, hStart: FormatedDate, hArrive: FormatedDate, duration: number, co2: number, step: Step[] }) {
+    add(context, payload: {
+      id: number,
+      hStart: FormatedDate,
+      hArrive: FormatedDate,
+      duration: number,
+      co2: number,
+      step: Step[] }) {
         const tmpObject = {
             id: payload.id,
             hStart: payload.hStart,
@@ -55,14 +67,14 @@ const history: Module<{ plannedJourneys: Journey[] }, any> = {
     },
     remove(context, payload: {id: number}) {
       const tmpStorage = localStorage.getItem('journeys');
-        const storage = tmpStorage ? JSON.parse(tmpStorage) : [];
-        let searchStorage = storage.filter((journey: Journey) => (journey.id !== payload.id));
-        if (searchStorage.length < 1) {
-          searchStorage = [];
-        }
-        localStorage.setItem('journeys', JSON.stringify(searchStorage));
-        context.commit('modifyPlannedJourneys', {plannedJourneys: searchStorage});
-    }
+      const storage = tmpStorage ? JSON.parse(tmpStorage) : [];
+      let searchStorage = storage.filter((journey: Journey) => (journey.id !== payload.id));
+      if (searchStorage.length === 0) {
+        searchStorage = [];
+      }
+      localStorage.setItem('journeys', JSON.stringify(searchStorage));
+      context.commit('modifyPlannedJourneys', {plannedJourneys: searchStorage});
+    },
   },
 };
 

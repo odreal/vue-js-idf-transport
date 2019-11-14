@@ -19,7 +19,6 @@
             PlannedItem,
         },
     });
-    /*<plannedItem v-for="plannedJourney in plannedJourneys" :key="plannedJourney.id" :journey="plannedJourney">b</plannedItem>*/
 </script>
 
 <style lang="scss">
