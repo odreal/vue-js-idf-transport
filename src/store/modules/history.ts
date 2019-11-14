@@ -58,6 +58,7 @@ const history: Module<{ plannedJourneys: Journey[] }, any> = {
         storage.push(tmpObject);
         localStorage.setItem('journeys', JSON.stringify(storage));
         context.commit('add', {
+            id: payload.id,
             hStart: payload.hStart,
             hArrive: payload.hArrive,
             duration: payload.duration,

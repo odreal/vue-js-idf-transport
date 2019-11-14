@@ -31,7 +31,8 @@ export function parseDate(dateISO: string): object {
     } else {
         minutes = '0' + dateValue.getMinutes();
     }
-    const tmpObject = {dateValue: dateValue, stringifiedDate: stringifiedDate, hours: hours, minutes: minutes};
+    const tmpObject = {dateValue, stringifiedDate, hours, minutes};
+
     return tmpObject;
 }
 

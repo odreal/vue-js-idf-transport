@@ -37,7 +37,7 @@ export default Vue.extend({
   components: {
       JourneyList,
   },
-  created: function() {
+  created() {
     this.$store.dispatch('journey/reset', {});
   },
   methods: {
