@@ -27,6 +27,13 @@ Choisir un itinéraire, cliquer sur "Enregistrer l'itinéraire"
 Aller sur l'onglet mes itinéraires
 ```
 
+### 4 - Tests
+```
+npm run test:e2e
+
+npm run test:unit
+```
+
 ### API Utilisées
 ```
 Ce projet utilise l'API NAVITIA pour le geocoding et la recherche d'itinéraire.
